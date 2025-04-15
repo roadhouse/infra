@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: wallabag
+    namespace: argocd
+spec:
+    project: default
+    source:
+        repoURL: https://github.com/roadhouse/helm-wallabag.git
+        targetRevision: main
+        path: .
+        helm:
+            values: ENC[AES256_GCM,data:Dhu/67EnUD1BHN5VAj3vMpYoocmOBTzsDsLb4a75KBLVBPOu25scPfCETbUNgOGt7/1BYkpc3s+HlpPEneWBwB77AK0JpELQAEUVEQUljM4qoGDyU6DJC/nEk9iqhpcgiKbz+qldnvCIkZPLdM/w3ov0PTnoTNiSTzOSqzOO0Nnt3Pro0aeRKvCBSDte59beCKZdFqmeLciXGGcNg5JJDXuTUZvj8l4z4Al4Wh0D1KITFGT5Ji5SzSvJ9o4pZQ32zYJdqz7YiYJcKvsUr4k3jC51AsRV36pKKUlyE/jELt44IF5hK9VmWJ29j4bSWijxNLNoZ6eXNon+Zh6Z2mNxz41rdAGxNB/qHQtBV9MI2X3MfOxgQEJWcjxZuRQ=,iv:rtD0lwEX92x1Gakgjw8TGsN5Y22xiABV2uNmDnVQLQ0=,tag:5QcFCIv+cuQxknNCyykodQ==,type:str]
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: wallabag
+    syncPolicy:
+        automated:
+            selfHeal: true
+            prune: true
+        syncOptions:
+            - CreateNamespace=true
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1jnm82r8s3f55w2ysjm0xm79ludu05pzefrdv2p8pzqefd47nh4xqne0jju
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBVWnYwd2tyY0xuTzg3ajQ3
+            bGVycitrNHF1MUE1NzhXVjBhN2pla1g4UEEwClloemV2bjRHUzFjZzdUdk16WGY5
+            YlJ2VWhMS3UzTElySnlCa2Q0TWpQeFkKLS0tIFFyeXJEcUN2VGQva3U5TDJSR251
+            aDM3Y3RTQWlvQ1dsSXBLRjZRMnV1NmsKgNQssx5uTpxqgBsN7jNUGsOSvBrDzxdZ
+            jLuhBmjH1/I4c2/glZ7YfDE/TDnGsdwXRcFAhWIJON7VHLKOc1xBjw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-14T19:58:10Z"
+    mac: ENC[AES256_GCM,data:QoIsok0L6Y8pKabqQ1E+wKMtzSKn53J4QG9Kb+RYVe5hPH/e1i3JJOSdb9ib5SdKRjnzqyI0zhOeklD5AqA/l7QgJ3it1FambNZMVMzeEwHrro/rgDbY4ih292PAPDUpwN50iAdCsJPwJCLMXImUIjo1jxHzA7pRrNYfh3notoA=,iv:YZzlK9x45IdcFL06ooIF1pICO6buTZbcwdlgdSm/meo=,tag:sR692f90UMnF1f2GKrWLwg==,type:str]
+    pgp: []
+    encrypted_regex: ^(hostPath|DOMAIN_NAME|values)$
+    version: 3.7.3

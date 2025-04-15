@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+    name: cloudflare-tunnel
+    namespace: argocd
+spec:
+    project: default
+    source:
+        repoURL: https://cloudflare.github.io/helm-charts
+        chart: cloudflare-tunnel
+        targetRevision: '*'
+        helm:
+            values: ENC[AES256_GCM,data:eHy9ZCo5Hh7HboVZadoM2fApHQMgZt13/3QP6PB22RB+LRPUAeeMv4IA7WATvaCwMCid7OlS2QzzbP4F2DWsYmbEJXFh5zSDzbFAiFjPkPuO5YF1KEYxEWlNt/zJdu98RTW9dCnL90HYxQq6CLLMBOyxc7dD1rx9IDwoQGnrYZc20gnwYYCUYjfcAKeu9PzcqxxA0+/AKR9s+JcBHes6IpofoDGrNm1rRjBmR22rTSnql0CnHb7BlRPffPu3kSLmkvBoSRDcAfwy8vZD98AhcMYDBcCqvIuYxv1v5eFBBZYNp47T0TmpXSzMekhz7u0DDFTofZ4iJ6J88SrJ+ERB/gIY2aZhLfH5yXzb7p/SrwPpBjJg+46soI04dsbYMKBi8/tFcjAjK8FVHYavynY24eQtTMsY7A9roxZJlkKV7ItS0oWRdRBh6RvtYrj4NY2rSi5xufWZwjqx3qWM04RprdEg6fRfiab//FpvuoWfqUocW8bQs3ULrOYA4h7ep58ly61z6tDeQVTpH+2aLwYUcFZ4Ig/WUajtaK0cKFU4botTwKdeMioheJFbYk3AQF3nOPnqkBTad0Jg76F73FT/SMtD1X9IMOTpnIOnh0PUyEu0L0CgXgpm4Reg18rSlo4e9vepQ1wA1shmyQan1lwpRyY/GKtkI7QVcj4gyucKO1jTF+maqZmcix2FOtJrBDYyTXrz9BUC1QWMyL3Qa93T4UW7XHeLAVpwPDmRQytek344QdKCiO0vtIBy7wYsymb04BzyQjKFaMzvyaFUkxdskalEnKyTjsoPYHdkAuRrjVf31IBa5NmtlrUUOR/S5tw=,iv:S0IbdH6zVXsxzrGqeSsfvXahJaS+26eYaj2LJBoFgzw=,tag:FstAJxXUBHV3qR/tfGXjyw==,type:str]
+    destination:
+        server: https://kubernetes.default.svc
+        namespace: cloudflare
+    syncPolicy:
+        automated:
+            selfHeal: true
+            prune: true
+        syncOptions:
+            - CreateNamespace=true
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1jnm82r8s3f55w2ysjm0xm79ludu05pzefrdv2p8pzqefd47nh4xqne0jju
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBTWXkwUnlaQnhueUdCSGdI
+            NVdaZTd6aW93dVVXZDdhNW15V3FjMW5qT0FRCnF5VDhUeFFNMkxCTVo3ell6VzNp
+            cE8zdEpXVEJyM3VBNldmWG84K2gzYzAKLS0tIGltWjRkdkZtS0dsVzdxN1lOMFdG
+            QVdmK0V3aTMvL2pQeHBwaXY1QzlJeHcKtJsN5zkuBbyYrvPXxImGKgi6T8MSshX6
+            mzL/AZDhXMhLDRWjTzUwMuFerRX2qpr3+SDJdiNkjpU9uGVIUKR1IA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-04-15T19:04:30Z"
+    mac: ENC[AES256_GCM,data:pP1xLZN5jyiVb524NwO06MQzi9d1J2eo8aHjQDEEmnykYDKAtbdUsSdebH8EDns9fjHx8Ww0NMCWjwg4RvG7zj1IvRmhBt8xj5RTaS1ptOgFE9cMsVQ1eJSOEigLqtRHd1DG/qms4xYN2iaTTzUFp9v+Wx9H9dBI27N/Gmg4h/c=,iv:P1ZxzKjBbiJG895rJZaBJwugKjqd05/lqihjcvqPiDw=,tag:moBQVH5gHt2f7rdxkoPI9A==,type:str]
+    pgp: []
+    encrypted_regex: ^(values)$
+    version: 3.7.3

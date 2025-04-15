@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-repo-server
+  namespace: argocd
+spec:
+  template:
+    spec:
+      containers:
+      - name: sops
+        image: alpine:3.15
+        command: [sh, -c]
+        args:
+        - |
+          apk add --no-cache gnupg age curl
+          curl -L https://github.com/mozilla/sops/releases/download/v3.7.3/sops-v3.7.3.linux.amd64 -o /usr/local/bin/sops
+          chmod +x /usr/local/bin/sops
+          sleep infinity
+        volumeMounts:
+        - mountPath: /app/config/plugin.yaml
+          name: argocd-sops-plugin
+          subPath: sops.yaml
+        - mountPath: /home/argocd/.config/sops/age
+          name: sops-age-key
+      volumes:
+      - configMap:
+          name: argocd-sops-plugin
+        name: argocd-sops-plugin
+      - secret:
+          secretName: sops-age-key
+          defaultMode: 0600
+        name: sops-age-key
