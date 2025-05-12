@@ -10,7 +10,7 @@ spec:
         targetRevision: main
         path: .
         helm:
-            values: ENC[AES256_GCM,data:Dhu/67EnUD1BHN5VAj3vMpYoocmOBTzsDsLb4a75KBLVBPOu25scPfCETbUNgOGt7/1BYkpc3s+HlpPEneWBwB77AK0JpELQAEUVEQUljM4qoGDyU6DJC/nEk9iqhpcgiKbz+qldnvCIkZPLdM/w3ov0PTnoTNiSTzOSqzOO0Nnt3Pro0aeRKvCBSDte59beCKZdFqmeLciXGGcNg5JJDXuTUZvj8l4z4Al4Wh0D1KITFGT5Ji5SzSvJ9o4pZQ32zYJdqz7YiYJcKvsUr4k3jC51AsRV36pKKUlyE/jELt44IF5hK9VmWJ29j4bSWijxNLNoZ6eXNon+Zh6Z2mNxz41rdAGxNB/qHQtBV9MI2X3MfOxgQEJWcjxZuRQ=,iv:rtD0lwEX92x1Gakgjw8TGsN5Y22xiABV2uNmDnVQLQ0=,tag:5QcFCIv+cuQxknNCyykodQ==,type:str]
+            values: ENC[AES256_GCM,data:yXJSCK+dNYJc0KKhcvh3ZOi/7do1UemdfPRUv3SQurhgM4VY2uV+6jFSA79NHt1tPMDku8BrQYqK+XAiJ90/hV0kZXNUwJQ7C1nvPLBNVmlKGqzLj4hmOxWEt+8L,iv:/9pemSl9DDyS6iMfxsCOB0bEVA5ZbrzQ2sQY8teAGP4=,tag:szXVxR7b4zd1VucklnXSkA==,type:str]
     destination:
         server: https://kubernetes.default.svc
         namespace: wallabag
@@ -35,8 +35,8 @@ sops:
             aDM3Y3RTQWlvQ1dsSXBLRjZRMnV1NmsKgNQssx5uTpxqgBsN7jNUGsOSvBrDzxdZ
             jLuhBmjH1/I4c2/glZ7YfDE/TDnGsdwXRcFAhWIJON7VHLKOc1xBjw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-14T19:58:10Z"
-    mac: ENC[AES256_GCM,data:QoIsok0L6Y8pKabqQ1E+wKMtzSKn53J4QG9Kb+RYVe5hPH/e1i3JJOSdb9ib5SdKRjnzqyI0zhOeklD5AqA/l7QgJ3it1FambNZMVMzeEwHrro/rgDbY4ih292PAPDUpwN50iAdCsJPwJCLMXImUIjo1jxHzA7pRrNYfh3notoA=,iv:YZzlK9x45IdcFL06ooIF1pICO6buTZbcwdlgdSm/meo=,tag:sR692f90UMnF1f2GKrWLwg==,type:str]
+    lastmodified: "2025-05-12T19:23:50Z"
+    mac: ENC[AES256_GCM,data:viErX+IQOzFJa64B+XVl7rkbgATEj0QsS9/D0ho8o8Z5BUrrCsYxlw4WnuFJObys+3G/zibMgNyoQkvD4cCE7+AQwYKV1/Gx0rJIQ1PughkjcNGYR0Y92BeXQG1uKHvO2+mNYaEpmH01ZXgTQMAPkd7+bVF97DFGhUO0zIf4eDo=,iv:AD86Q3AeeKoaBrL5Kajq88mHSEiK1exXzFxtu7uZ65A=,tag:qjXfR9FPPHwgbv3oQoAQrg==,type:str]
     pgp: []
     encrypted_regex: ^(hostPath|DOMAIN_NAME|values)$
     version: 3.7.3
