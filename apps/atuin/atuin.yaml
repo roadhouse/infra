@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: atuin
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://helm-charts.rm3l.org
+    targetRevision: 0.10.1
+    chart: atuin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: atuin
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
