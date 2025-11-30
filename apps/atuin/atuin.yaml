@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://helm-charts.rm3l.org
-    targetRevision: 0.10.1
+    targetRevision: 0.10.3
     chart: atuin
   destination:
     server: https://kubernetes.default.svc
