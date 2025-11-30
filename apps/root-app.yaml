@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/user/infra2.git  # Replace with your actual repository URL
+    repoURL: https://github.com/roadhouse/infra.git
     targetRevision: HEAD
     path: apps
   destination:
