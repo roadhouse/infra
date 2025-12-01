@@ -1,0 +1,35 @@
+apiVersion: networking.cfargotunnel.com/v1alpha1
+kind: TunnelBinding
+metadata:
+    name: ENC[AES256_GCM,data:/UG8hGu4YLp8nxZJtNc=,iv:aBSu17R6VMPL9Kl7Sp71wZM1i4GmARCal4IZaMvs61Y=,tag:HbEDhqcxrA0UBwzByCHTBA==,type:str]
+    namespace: wallabag
+spec:
+    tunnelRef:
+        kind: ClusterTunnel
+        name: ENC[AES256_GCM,data:N1i9dgigTw==,iv:3eisLR1z6gy8Cy6k9/7XfFSygKqApRZ6skDrSvxJY7g=,tag:Ne2AIO8XUypDd95qQ1xb1A==,type:str]
+    subjects:
+        - kind: Service
+          name: ENC[AES256_GCM,data:0gjLGsgWLk8=,iv:LIp3gCivLUZCGKq+iPbZO8MuP2We2NHRCGZOVqgOsdc=,tag:/MNKwXs9bNUhnKiD61CpRQ==,type:str]
+          spec:
+            protocol: http
+    fqdn: ENC[AES256_GCM,data:caDHtlga4Dknfk2mfnjsxQ==,iv:SP361QQaTBzJ9Di4ubouu4KwVN9snT4BgUtYcN76geA=,tag:K+JoSZCFJP04RVHxNLd+Yg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1jnm82r8s3f55w2ysjm0xm79ludu05pzefrdv2p8pzqefd47nh4xqne0jju
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4ZGpTdUt5Y0lBRjhzYnpt
+            Z0ZmdUtTV2Fmd3ljVFgvY1BobEZFMGh6Q2xNCk1xY0IwakJ3Ty85U3lWUHpIa25l
+            b0Z6RnFlNHNqeVVLTjFrUGRiN1NSZ3MKLS0tIElhVktMTnRmV01ENG94LzE4bk5l
+            MXEzbTV2OWxDZDhzQWNpVytsaXR6WDgKIoLnzIaXSOthRFgZzuvbz/wmTcSMPX+s
+            HQdOrDAwDseAEamaP+GoET/ug9uedOHqV70z+w1311MfjyAjvC1Q5A==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2025-12-01T04:07:37Z"
+    mac: ENC[AES256_GCM,data:cSxG+/IFKtSuAYkyOmels78VWBTVKZWuZ9WaF0YICvDWNYMwRJ0Jt43bP5Gy17YwpLZPMBszJb6GrAdL7mr2sUapuIx6cHOi4kD/ZnvPiH7H5VckzTnowRObTS9upNMiGxUP1Lutxqm914kN3doiZpAhmHocgEOvvsDv+m0cy3o=,iv:7ZdByc3vEbEkzzBhPRpq6JZ/8dkniA1eWZV/lN3Jsdo=,tag:H8f8rqNHlna3rIlzT3oHwg==,type:str]
+    pgp: []
+    encrypted_regex: ^(values|fqdn|name)$
+    version: 3.7.3
