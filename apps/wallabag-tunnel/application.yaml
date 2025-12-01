@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/roadhouse/infra.git
     targetRevision: HEAD
     path: tunnels/wallabag
+    plugin:
+      name: sops
   destination:
     server: https://kubernetes.default.svc
     namespace: wallabag
