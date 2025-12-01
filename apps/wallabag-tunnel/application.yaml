@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/roadhouse/infra.git
     targetRevision: HEAD
-    path: tunnels/wallabag
+    path: apps/wallabag-tunnel
     plugin:
       name: sops
   destination:
