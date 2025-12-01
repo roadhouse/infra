@@ -6,18 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://adyanth.github.io/cloudflare-operator/
-    chart: cloudflare-operator
-    targetRevision: "*"
-    helm:
-      values: |
-        cloudflare:
-          apiToken:
-            existingSecret: cloudflare-api-token
-            key: apiToken
-          accountId:
-            existingSecret: cloudflare-api-token
-            key: accountId
+    repoURL: https://github.com/adyanth/cloudflare-operator.git
+    targetRevision: v0.13.1
+    path: config/default
   destination:
     server: https://kubernetes.default.svc
     namespace: cloudflare-operator-system
