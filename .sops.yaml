@@ -1,4 +1,4 @@
 creation_rules:
   - path_regex: '.*\.(yaml)$'
-    encrypted_regex: '^(values)$'
+    encrypted_regex: '^(values|fqdn|name)$'
     age: 'age1jnm82r8s3f55w2ysjm0xm79ludu05pzefrdv2p8pzqefd47nh4xqne0jju'
